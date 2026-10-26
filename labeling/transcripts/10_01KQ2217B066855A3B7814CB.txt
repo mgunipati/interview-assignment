@@ -1,0 +1,51 @@
+Aegis / Meridian Capital - Service Reliability Discussion
+2026-03-14
+
+[AEGIS] Rachel Torres: Hi Customer 1, thanks so much for making time for us today, I know your schedule has been pretty packed this week.
+[CUSTOMER] Customer 1: Yeah, it has been, honestly. Hi Rachel, hi everyone.
+[AEGIS] Lisa Park: Hi Customer 1, I'm Lisa Park, I work alongside Rachel on your account — I don't think we've actually spoken before, so just wanted to introduce myself quickly.
+[CUSTOMER] Customer 1: Oh right, yes, Rachel mentioned you'd be joining. Nice to meet you Lisa.
+[AEGIS] Rachel Torres: And I've also got Ravi Gupta on the line, he's one of our DevOps engineers and he can speak a lot more technically to some of the stuff we're going to cover today.
+[AEGIS] Ravi Gupta: Hey Customer 1, good to be here.
+[CUSTOMER] Customer 1: Good, okay. So look, I'll be honest with you Rachel, I agreed to this call but I'm — I'm not in a great headspace about things right now, and I think you probably know why.
+[AEGIS] Rachel Torres: We do, and that's exactly why we wanted to get on the phone rather than just send another email. I want to give you the space to tell us everything that's on your mind.
+[CUSTOMER] Customer 1: Okay. So, you know, Monday was — it was a really bad day for us. We had no visibility into threat monitoring for, what, like six hours? Six hours, Rachel. In financial services, that's not a minor inconvenience, that's a serious risk event.
+[AEGIS] Rachel Torres: Completely understood, and I'm not going to minimize that at all.
+[CUSTOMER] Customer 1: Our security team was essentially flying blind. We had regulators — we have ongoing audit conversations happening, and I had to get on a call with our CISO on Monday afternoon and explain why our threat monitoring platform was just... not working. That's not a conversation I ever want to have.
+[AEGIS] Ravi Gupta: Yeah, and Customer 1, I want to jump in here because I think it's important that you hear directly from me on the technical side of what happened. Can I — is it okay if I walk through it?
+[CUSTOMER] Customer 1: Please. Yes. I want to understand what actually happened because the status page updates were... they were not sufficient.
+[AEGIS] Ravi Gupta: Yeah, and I hear you on that, the communications piece is something we're addressing separately. But on the technical side — what happened was we had a cascading failure in our event processing pipeline. There was essentially a single point of failure in the event ingestion layer, and when that component went down, it took the whole pipeline with it rather than failing gracefully.
+[CUSTOMER] Customer 1: Right. So there was no redundancy built in.
+[AEGIS] Ravi Gupta: That's — yeah, that's the honest answer. There wasn't sufficient redundancy at that layer, and that's a design gap that we've already started addressing. We're implementing redundant processing nodes and we're adding a circuit breaker pattern so that if one node degrades, traffic gets redistributed rather than causing a full outage.
+[CUSTOMER] Customer 1: Okay, and when does that actually get shipped? Because I've been in software long enough to know that 'we're implementing' can mean a lot of different things.
+[AEGIS] Rachel Torres: That's a completely fair push. Ravi, do you want to give Customer 1 the timeline?
+[AEGIS] Ravi Gupta: Yeah, so the redundant nodes are already being staged in our dev environment, and we're targeting end of this month for the circuit breaker rollout to production. We're not waiting on this one.
+[CUSTOMER] Customer 1: End of March. Okay. And what happens between now and end of March if something goes wrong again?
+[AEGIS] Ravi Gupta: So in the interim we've actually increased monitoring frequency on that specific pipeline component and we have an on-call rotation specifically watching it. It's not the permanent fix but it's not nothing either.
+[CUSTOMER] Customer 1: I appreciate you explaining it, Ravi, I do. But I have to be candid with you all — this isn't just about the technical fix for me. The bigger issue is that this shook my confidence, and frankly my leadership's confidence, in Aegis Detect as a platform we can rely on.
+[AEGIS] Lisa Park: Can you tell us a bit more about what that looks like internally? Like, is this something your leadership is actively asking questions about?
+[CUSTOMER] Customer 1: Yes. My CISO has asked me to do a formal review of our threat monitoring vendor options. And I don't love that I'm in that position, because we've been with Aegis for, what, almost two years now, and up until Monday I would have said we were pretty happy. But this... this was bad timing on a lot of levels.
+[AEGIS] Rachel Torres: I really appreciate you being so direct with us Customer 1, that kind of honesty helps us actually address what matters. Can I ask — is the review something that's already in motion, or is it more of a... a contingency your CISO is preparing for?
+[CUSTOMER] Customer 1: It's in motion. We've — look, I'll be transparent. We've been talking to SentinelShield. They actually reached out to us a few weeks ago, coincidentally, and we had a demo scheduled that we were going to deprioritize, and now... we're not deprioritizing it.
+[AEGIS] Rachel Torres: Okay. Thank you for telling us that.
+[CUSTOMER] Customer 1: I'm not saying it to be threatening, I'm saying it because I think you deserve to know where we're at. We haven't made any decisions. But I'd be lying if I said we weren't looking.
+[AEGIS] Rachel Torres: No, and I — I genuinely appreciate that, Customer 1. Look, we're not going to sit here and tell you not to do your due diligence, that would be unreasonable. What I do want to make sure is that you're evaluating us based on a full picture, not just this week.
+[CUSTOMER] Customer 1: And that's fair, but the full picture does include this week. That's part of the picture.
+[AEGIS] Rachel Torres: Absolutely. No question. And we own that.
+[CUSTOMER] Customer 1: I guess what I want to understand from you all is — is this a one-off? Or is this symptomatic of something deeper in how Detect is architected? Because those are two very different stories.
+[AEGIS] Ravi Gupta: That's exactly the right question and I want to give you a real answer, not a canned one. The honest truth is — the single point of failure that caused this outage was a known architectural limitation that we hadn't yet prioritized fixing. We knew it existed. We underestimated the blast radius. That's on us.
+[CUSTOMER] Customer 1: I... okay. I actually appreciate that you said that, Ravi. That's more honest than I expected.
+[AEGIS] Ravi Gupta: We've done a full audit of similar single points of failure across the Detect infrastructure this week, and the circuit breaker implementation addresses the highest risk ones. I can share that audit summary with you if that would be helpful — obviously redacted where appropriate, but I think seeing the scope of what we've reviewed might give you some confidence.
+[CUSTOMER] Customer 1: Yes. Yes I'd want to see that. That's the kind of thing I can actually bring to my CISO — something substantive.
+[AEGIS] Rachel Torres: We'll get that to you by end of day Monday, Ravi can you confirm that works on your end?
+[AEGIS] Ravi Gupta: Yeah, Monday works, I'll have it ready.
+[CUSTOMER] Customer 1: Okay. And look, I do want to say — the other piece of this that's been frustrating, and this is maybe more on the compliance side, is that I need to be able to demonstrate to our regulators that we have continuous monitoring in place. When Detect goes down, that argument falls apart. And in our industry, that's not academic.
+[AEGIS] Lisa Park: That's such an important point, and actually — I don't want to pivot too hard here because I know we're focused on Detect today — but we do have some things coming in Comply that might actually help you build a stronger narrative around that for regulators, around your overall monitoring posture.
+[CUSTOMER] Customer 1: Maybe, but right now I need Detect to work before I worry about how we report on it.
+[AEGIS] Lisa Park: That's completely fair. You're right, one thing at a time.
+[CUSTOMER] Customer 1: So where do we land today? I want to make sure I leave this call with a clear picture of what you're committing to and by when.
+[AEGIS] Rachel Torres: Okay, let me summarize and you can tell me if I'm missing anything. Ravi's going to send over the infrastructure audit summary by Monday. We're committing to end-of-month production deployment of the circuit breaker fix and redundant nodes. And I'd like to schedule a follow-up call in two weeks — not to sell you anything, just to check in and make sure the interim monitoring is holding and answer any questions that come up from your internal review.
+[CUSTOMER] Customer 1: Two weeks. Okay. Yeah, I can do that. And Rachel — I do want to be clear, I'm not trying to be difficult here. I'm trying to do right by my organization.
+[AEGIS] Rachel Torres: I know that. And honestly, the fact that you're still talking to us and being this candid tells me that you haven't given up on us yet, and we're not going to give up on you either.
+[CUSTOMER] Customer 1: We'll see. Send me that audit doc and let's talk in two weeks.
+[AEGIS] Rachel Torres: Absolutely. Thanks Customer 1, we'll be in touch Monday.

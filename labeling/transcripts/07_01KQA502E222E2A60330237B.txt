@@ -1,0 +1,47 @@
+Aegis / Pineridge Systems - Q1 Business Review
+2026-03-03
+
+[AEGIS] Daniel Okafor: Alright, I think we've got everyone on — Customer 1, can you hear us okay?
+[CUSTOMER] Customer 1: Yeah, loud and clear! Hey Daniel, hey everyone.
+[AEGIS] Daniel Okafor: Hey Customer 1! Good to have you on. I've got Kevin and Ananya here with me today as well.
+[AEGIS] Kevin O'Brien: Hey Customer 1, great to connect again — it's been a little while.
+[CUSTOMER] Customer 1: Kevin! Yeah it has, I think the last time we actually talked was, uh, what, back in December? The onboarding wrap-up call?
+[AEGIS] Kevin O'Brien: That sounds about right, yeah. Time flies.
+[AEGIS] Ananya Sharma: Hi Customer 1, I'm Ananya — I joined the solutions engineering team back in January, so this is actually my first time connecting with you directly. Looking forward to the conversation.
+[CUSTOMER] Customer 1: Oh nice, welcome! Yeah, I'm sure Daniel's told you all about us — we're a fun bunch over here at Pineridge.
+[AEGIS] Ananya Sharma: He definitely has, all good things.
+[AEGIS] Daniel Okafor: So Customer 1, um, just to set the stage for today — we wanted to use this Q1 review to, you know, look back at how things have been going since you've been live on the platform, talk through where you're seeing value, and then we do want to get into some of the renewal conversation as well since that's coming up. Does that agenda work for you?
+[CUSTOMER] Customer 1: Yeah, absolutely, that's exactly what I was hoping we'd cover. I've actually got a few things I wanted to bring up too so I'll just, uh, weave those in as we go if that's alright.
+[AEGIS] Daniel Okafor: Perfect, please do. So let's start with — how has the overall experience been? Like, high level, how's the team feeling about Aegis so far?
+[CUSTOMER] Customer 1: Honestly? Pretty great. Like I'll be real with you — we evaluated a few different vendors before we went with Aegis, we were looking at SentinelShield pretty seriously, and I'm glad we went the direction we did. The platform has been solid.
+[AEGIS] Kevin O'Brien: That's really good to hear. What's been the standout for your team?
+[CUSTOMER] Customer 1: Aegis Detect, hands down. The threat monitoring visibility we have now compared to what we were doing before — it's night and day. My team was spending so much time on manual log correlation and now we're just... getting alerts that actually matter. The signal-to-noise ratio is way better than I expected going in.
+[AEGIS] Ananya Sharma: That's awesome to hear, and that's honestly one of the things we hear most consistently from customers in the tech space — the alert fatigue problem is real and we spent a lot of time tuning the detection models for that.
+[CUSTOMER] Customer 1: Yeah it shows. I mean, we're a lean security team — it's basically me and two other engineers — so anything that reduces the noise is, like, genuinely mission critical for us.
+[AEGIS] Daniel Okafor: Totally makes sense. And how about Aegis Protect? I know the backup and recovery piece was a big part of the initial use case when we were scoping the deal.
+[CUSTOMER] Customer 1: Yeah, Protect has been good. We did a recovery test last month actually — like a planned DR drill — and uh, the RTO we hit was within what we needed. I think it was somewhere around the two hour mark for our primary workloads, which our engineering leadership was very happy about.
+[AEGIS] Kevin O'Brien: Oh that's great, a two hour RTO for a first DR drill is a solid result. Did everything go pretty smoothly or were there any hiccups during the test?
+[CUSTOMER] Customer 1: Um, there was one thing — we had a little confusion around the restore sequencing for our database tier, like which snapshots to pull in what order. But honestly that was more of a documentation gap on our end than a platform issue. We figured it out, and actually your support team was super responsive when we pinged them mid-drill, which I appreciated.
+[AEGIS] Kevin O'Brien: Oh good, I'm glad support was helpful. And noted on the restore sequencing — Ananya, that's something we could maybe look at putting together some additional runbook guidance for, right?
+[AEGIS] Ananya Sharma: Definitely, yeah — I can work with Customer 1's team to put together a tiered restore playbook specific to your architecture. That's something we've done for a couple of other customers and it's made a big difference.
+[CUSTOMER] Customer 1: Oh that would be amazing, yes please. That's exactly the kind of thing that would be super helpful.
+[AEGIS] Daniel Okafor: We'll make that a follow-up action item. So Customer 1, on the Comply side — I know compliance wasn't initially the primary driver for your purchase, but we have been rolling out some, uh, some pretty significant updates there. Have you had a chance to poke around in that module at all?
+[CUSTOMER] Customer 1: A little bit, yeah. We're not heavily compliance-burdened right now — we do have some SOC 2 obligations but we've been managing that kind of manually. What's coming on that front?
+[AEGIS] Ananya Sharma: So we've got a major release coming up in April — Aegis Comply version 2 — and it's a pretty big deal honestly. The headline feature is on-demand compliance reporting, so you'll be able to generate SOC 2 reports, PCI DSS, HIPAA, ISO 27001 — all from within the platform, whenever you need them, without having to go through a manual evidence collection process.
+[CUSTOMER] Customer 1: Wait, on-demand SOC 2 reporting? Like, I can just... generate it when an enterprise prospect asks for it?
+[AEGIS] Ananya Sharma: Exactly, that's the idea. The platform continuously maps your controls against the framework requirements, so when you need to produce a report it's pulling from live evidence rather than you having to scramble to collect everything manually.
+[CUSTOMER] Customer 1: Okay that is genuinely exciting. Our CTO has been on my case about SOC 2 readiness for like six months so this could be — yeah, I need to loop him in on this. When in April is this going live?
+[AEGIS] Daniel Okafor: We're targeting April 7th for general availability. I can make sure you're on the early access communication list so you get all the details as soon as they're finalized.
+[CUSTOMER] Customer 1: Yes, please do that. And honestly this is — this changes my thinking a little bit around the renewal because we were kind of treating Comply as like a nice-to-have, but if we can actually use it to streamline our SOC 2 process that becomes a much more concrete ROI story for me to take to my leadership.
+[AEGIS] Daniel Okafor: That's exactly the conversation we want to help you have internally. Do you want us to put together some numbers around the time savings and cost of manual compliance work versus what you'd be looking at with Comply v2? We can customize that for your situation.
+[CUSTOMER] Customer 1: Yeah, that would be super useful. If you can give me something I can actually put in a slide that my CFO will understand, that's gold.
+[AEGIS] Daniel Okafor: We've got a template for exactly that, so I'll customize it for Pineridge and send it over. Okay — so let's talk about the renewal itself. Your current term is up at the end of Q2, so we've got a bit of runway but I don't want to leave it too late. How are you feeling about it?
+[CUSTOMER] Customer 1: I mean, directionally I'm very positive on renewing. The platform has delivered, the team likes it, support has been responsive — we're not shopping around. I do want to have a conversation about pricing though, not because I'm unhappy, just because my budget situation going into next year is a little tighter and I want to make sure we're getting the best structure.
+[AEGIS] Daniel Okafor: Totally fair, and I appreciate you being upfront about that. Let me see what I can work out — I think if we're looking at a multi-year renewal there might be some flexibility we can bring to the table. And if Comply v2 is going to become a more active part of your workflow, we should also make sure the packaging makes sense for where your usage is going to land.
+[CUSTOMER] Customer 1: Yeah that's a good point actually. Can we set up a separate call to go through the commercial details once I've had a chance to review the Comply v2 stuff? I want to have a clearer picture of scope before we talk numbers.
+[AEGIS] Daniel Okafor: Absolutely, let's do that. I'm thinking second week of April? That gives you time to digest the Comply v2 launch and we can have a more informed conversation.
+[CUSTOMER] Customer 1: That works. Week of April 13th or so — I'll send you some times. And hey, can I just say — I know these QBRs can sometimes feel like a checkbox exercise but this has actually been really useful. I've got a few concrete things to take back and share with my team.
+[AEGIS] Daniel Okafor: That's exactly what we're going for. We really value the partnership with Pineridge and we want these conversations to feel like they're worth your time. Alright — let me just recap the action items real quick: Ananya is going to put together the tiered restore playbook, I'm going to send over the ROI template for Comply v2, get you on the early access list, and we'll schedule a commercial follow-up for mid-April. Sound right?
+[CUSTOMER] Customer 1: Yep, that's exactly right. Thanks everyone — Kevin, Ananya, always great to connect. Looking forward to the next one.
+[AEGIS] Kevin O'Brien: Thanks Customer 1, take care!
+[AEGIS] Ananya Sharma: Really nice to meet you Customer 1, talk soon!

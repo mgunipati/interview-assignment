@@ -1,0 +1,228 @@
+{
+  "Compliance Reporting": [
+    {
+      "name": "Manual Compliance Audit Preparation",
+      "definition": "Pain around slow, manual compliance evidence collection and report generation for audits, including lack of on-demand reporting, duplicated effort across overlapping frameworks, audit deadline pressure, and evidence gaps such as log retention.",
+      "source_clusters": [
+        11
+      ],
+      "coherence": "high"
+    },
+    {
+      "name": "Comply module adoption and framework needs",
+      "definition": "Statements about the Comply compliance reporting module: framework coverage needs (SOC 2, ISO 27001, GDPR), readiness guidance, adoption and underutilisation, implementation and integration effort, on-demand reporting as upsell or differentiator, and release issues.",
+      "source_clusters": [
+        9
+      ],
+      "coherence": "medium"
+    },
+    {
+      "name": "HIPAA Compliance for Healthcare Customers",
+      "definition": "Healthcare customers' HIPAA-driven needs and gaps, spanning Comply reporting coverage and accuracy, audit evidence, and HIPAA-mandated backup retention, encryption and continuity.",
+      "source_clusters": [
+        2
+      ],
+      "coherence": "medium"
+    },
+    {
+      "name": "PCI DSS Compliance Reporting Needs",
+      "definition": "Customer requirements, pain points, and expansion plans centered on PCI DSS compliance reporting, audit evidence, and related framework coverage in Comply.",
+      "source_clusters": [
+        3
+      ],
+      "coherence": "high"
+    }
+  ],
+  "Platform Reliability": [
+    {
+      "name": "Outage fallout and competitive risk",
+      "definition": "Statements about the impact of a recent platform outage \u2014 eroded reliability trust, requests for root-cause incident reports and remediation documentation, compliance monitoring gaps, and competitors exploiting the outage or pricing to win deals.",
+      "source_clusters": [
+        13
+      ],
+      "coherence": "medium"
+    },
+    {
+      "name": "Ingestion Pipeline Single Point Failure",
+      "definition": "Statements about the Detect event ingestion pipeline's non-redundant single node and missing circuit breaker, the resulting cascading outages and lost threat visibility, and related remediation work (failover, circuit breaker tuning, testing, monitoring).",
+      "source_clusters": [
+        22
+      ],
+      "coherence": "high"
+    },
+    {
+      "name": "Detect Ingestion Pipeline Outage",
+      "definition": "Statements about the cascading failure/outage of the Detect threat detection event ingestion and processing pipeline caused by a single point of failure, its loss of alerts and visibility, and related follow-ups such as missing workarounds, retroactive analysis, and backlog items.",
+      "source_clusters": [
+        23
+      ],
+      "coherence": "high"
+    },
+    {
+      "name": "Detect outage eroding customer trust",
+      "definition": "Statements about past threat detection outages and pipeline reliability concerns that have eroded customer and executive confidence, including requests for health visibility, reliability assurance, and related compliance exposure.",
+      "source_clusters": [
+        14
+      ],
+      "coherence": "medium"
+    },
+    {
+      "name": "Detect Ingestion Pipeline Outage",
+      "definition": "Multi-hour outages of the Detect threat detection event ingestion pipeline caused by a single point of failure, leading to lost monitoring visibility, late internal detection, and reliability concerns.",
+      "source_clusters": [
+        21
+      ],
+      "coherence": "high"
+    }
+  ],
+  "Backup and Recovery": [
+    {
+      "name": "Backup Job Performance and Restore Gaps",
+      "definition": "Issues with Protect backup operations including slow or failing backup jobs, scheduler scaling, agent coverage, fragmented visibility, and limited file-level restore and recovery objective assurance.",
+      "source_clusters": [
+        6
+      ],
+      "coherence": "medium"
+    }
+  ],
+  "Identity & Authentication": [
+    {
+      "name": "Identity SSO and QA Testing Gaps",
+      "definition": "Issues with Identity product authentication (SSO/SAML, MFA/TOTP, SCIM provisioning, session timeouts, certificate handling in connectors) alongside QA/test coverage and release-process gaps that let regressions through.",
+      "source_clusters": [
+        15
+      ],
+      "coherence": "medium"
+    }
+  ],
+  "Identity": [
+    {
+      "name": "MFA and Access Management Gaps",
+      "definition": "Issues with identity and access management including inconsistent or inflexible MFA enforcement, fragmented SSO tooling, role/permission model limitations, privileged access and offboarding gaps, and perceived immaturity of the Identity product.",
+      "source_clusters": [
+        16
+      ],
+      "coherence": "medium"
+    }
+  ],
+  "Comply Product": [
+    {
+      "name": "Comply Report and Control-Mapping Gaps",
+      "definition": "Limitations in Comply's compliance reports and framework handling, including missing cross-framework control mapping, inflexible/static report formats, missing frameworks or sections, annotation/tagging gaps, and usability or documentation issues.",
+      "source_clusters": [
+        10
+      ],
+      "coherence": "high"
+    }
+  ],
+  "Incident Management": [
+    {
+      "name": "Lack of Proactive Outage Communication",
+      "definition": "Statements about Aegis failing to proactively notify customers of platform outages, slow or insufficient status page updates, and related gaps in incident detection, communication, and outage impact.",
+      "source_clusters": [
+        20
+      ],
+      "coherence": "high"
+    }
+  ],
+  "Implementation & Onboarding": [
+    {
+      "name": "Onboarding and integration setup effort",
+      "definition": "Concerns about the effort, manual configuration, and limited engineering bandwidth involved in onboarding, attribute mapping, SSO/SIEM connector setup, and custom integrations.",
+      "source_clusters": [
+        8
+      ],
+      "coherence": "medium"
+    }
+  ],
+  "Customer Communication": [
+    {
+      "name": "Lack of Proactive Customer Notification",
+      "definition": "Failures to proactively inform customers (and customer-facing teams) about known defects, incidents, fixes, releases, or resolution timelines, leading to wasted troubleshooting and escalations.",
+      "source_clusters": [
+        19
+      ],
+      "coherence": "medium"
+    }
+  ],
+  "Billing & Invoicing": [
+    {
+      "name": "Unexpected Overage and Proration Charges",
+      "definition": "Customers surprised by invoice overage charges above contracted tiers or proration errors, often due to lack of usage visibility or missing proactive threshold alerts, leading to billing disputes.",
+      "source_clusters": [
+        0
+      ],
+      "coherence": "high"
+    }
+  ],
+  "Customer Support": [
+    {
+      "name": "Slow Support Response Times",
+      "definition": "Complaints about slow initial support responses, long waits, unresolved or unfollowed tickets, and difficulty escalating priority or critical cases.",
+      "source_clusters": [
+        7
+      ],
+      "coherence": "high"
+    }
+  ],
+  "Product Roadmap": [
+    {
+      "name": "Roadmap Timeline Uncertainty",
+      "definition": "Customer frustration or skepticism about missing committed delivery dates and visibility for requested roadmap features, plus related deadline pressure on deployments and internal sprint capacity.",
+      "source_clusters": [
+        5
+      ],
+      "coherence": "medium"
+    }
+  ],
+  "Commercial & Contracts": [
+    {
+      "name": "Renewal Pricing and Contract Terms",
+      "definition": "Customer negotiations and concerns around renewal price increases, budget constraints, multi-year versus annual commitments, procurement approval, and contract flexibility for seat or usage growth.",
+      "source_clusters": [
+        1
+      ],
+      "coherence": "high"
+    }
+  ],
+  "Detection & Alerting": [
+    {
+      "name": "Alerting Latency and Reliability Gaps",
+      "definition": "Issues where alert delivery, routing, severity scoring, deduplication, or self-monitoring is delayed, degraded, or missing, slowing detection of and response to critical events.",
+      "source_clusters": [
+        17
+      ],
+      "coherence": "medium"
+    }
+  ],
+  "Threat Detection": [
+    {
+      "name": "Detect False Positives and Alert Fatigue",
+      "definition": "Issues where Detect generates excessive false-positive or low-signal alerts due to poor tuning, baselines, or thresholds, burdening small security teams with triage and fatigue (including one positive mention of reduced noise).",
+      "source_clusters": [
+        18
+      ],
+      "coherence": "high"
+    }
+  ],
+  "Reliability & Contracts": [
+    {
+      "name": "Uptime SLA Breaches and Credits",
+      "definition": "Outages that breach contractual uptime SLAs, customer demands for service credits or compensation, and requests for stronger or formalized SLA terms as a condition of renewal.",
+      "source_clusters": [
+        4
+      ],
+      "coherence": "high"
+    }
+  ],
+  "Performance & Scalability": [
+    {
+      "name": "Compliance Report Generation Performance",
+      "definition": "Latency, timeouts, concurrency load testing, queuing, and rate/usage limits affecting on-demand compliance report generation in Comply and its API.",
+      "source_clusters": [
+        12
+      ],
+      "coherence": "high"
+    }
+  ]
+}

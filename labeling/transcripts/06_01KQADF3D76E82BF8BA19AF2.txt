@@ -1,0 +1,43 @@
+All Hands - February Wrap
+2026-02-28
+
+[AEGIS] Raj Kapoor: Alright, I think we've got everyone, let me just — yeah, okay, Diana's here, Megan's here, Nina just joined. Good. Let's get started.
+[AEGIS] Diana Reeves: Sorry I'm a minute late, I was wrapping up something with the support team.
+[AEGIS] Raj Kapoor: No worries. So, February wrap — I want to keep this tight, maybe twenty minutes. Megan, you want to kick us off on the product side?
+[AEGIS] Megan Lawson: Yeah, sure. So February was actually a pretty solid month for us on the product front. The big thing obviously is Comply v2 — we are tracking toward the April GA, the engineering team hit all their February milestones, which honestly I was a little worried about going into the month.
+[AEGIS] Raj Kapoor: What were the milestones specifically? Just so we're all aligned.
+[AEGIS] Megan Lawson: So the two big ones were — finishing the multi-framework reporting backend, so that's the SOC 2, PCI DSS, HIPAA, ISO 27001 support — all of that is done on the backend side. And then the second was the on-demand report generation pipeline, which went through its first full integration pass.
+[AEGIS] Raj Kapoor: Okay, and Nina, from the QA side — where are we on testing coverage for Comply v2?
+[AEGIS] Nina Kowalski: So we're at about sixty-two percent coverage right now on the new modules. We had planned to be closer to seventy by end of February, so we're a little behind. The on-demand pipeline took longer to instrument than we expected — there were some async job handling edge cases that needed more test scaffolding.
+[AEGIS] Raj Kapoor: Eight points behind — is that recoverable by, what's the target before GA, eighty-five percent?
+[AEGIS] Nina Kowalski: Eighty percent is the target. And yeah, I think it's recoverable but it does depend on whether we get the two additional QA resources that were supposed to come over from the Detect team in March.
+[AEGIS] Raj Kapoor: That's still the plan. Marcus and — is it Priya? — they're finishing up their current sprint on Detect and then they're supposed to rotate over. I don't see that changing.
+[AEGIS] Nina Kowalski: Okay, good. I just wanted to flag it so it's on the record, not trying to raise a red flag or anything.
+[AEGIS] Raj Kapoor: No, it's good to flag. That's what these calls are for. Diana, what's the customer success angle on February — anything notable?
+[AEGIS] Diana Reeves: Yeah, so a couple things. Renewals for the month came in at ninety-one percent, which is in line with our Q1 target. We did lose one account — Harrington Financial, they went with a competitor.
+[AEGIS] Megan Lawson: Do we know who they went with?
+[AEGIS] Diana Reeves: VaultEdge. They were pretty upfront about it — their procurement team said VaultEdge came in lower on price and had a compliance module that was, quote, more mature. Which, I mean, that stings a little given what we're about to launch.
+[AEGIS] Megan Lawson: Timing. That's just timing. If Harrington had waited another six weeks they'd have seen Comply v2 and that conversation might've gone differently.
+[AEGIS] Diana Reeves: I know, I know. I'm not blaming anyone, it's just frustrating. The good news is we've already got two upsell conversations going — one with Brentwood Logistics on adding Identity to their Protect subscription, and another with TechCore on expanding their Detect seat count.
+[AEGIS] Raj Kapoor: What's the ARR on those two if they close?
+[AEGIS] Diana Reeves: Combined, roughly two-forty ARR. Brentwood is the bigger one — they're a mid-market account but they've got a pretty complex identity environment so we're not underselling.
+[AEGIS] Raj Kapoor: Okay. Megan, on the Detect side — anything from the engineering team I should know about going into March? I know there's been some chatter about the event processing pipeline.
+[AEGIS] Megan Lawson: Yeah, so — and this is something I was going to bring up separately but since we're here — the infrastructure team flagged a potential bottleneck in the ingestion layer. It's not critical right now but it's something they want to address in March before it becomes a problem.
+[AEGIS] Raj Kapoor: How long has that been on the radar?
+[AEGIS] Megan Lawson: Honestly, a few weeks. It got flagged during a load test in late January and it's been sitting in the backlog. I think it should probably get elevated.
+[AEGIS] Raj Kapoor: Yeah, let's — let's not let that sit. Can you get me a write-up by Tuesday? I want to understand the scope before we assign resources to it.
+[AEGIS] Megan Lawson: Will do.
+[AEGIS] Raj Kapoor: Nina, anything from QA on the Detect side? Since you're embedded across both products right now.
+[AEGIS] Nina Kowalski: Nothing that rises to the level of a flag, really. Regression suite has been stable. The one thing I'd say is we've had a few intermittent test failures on the event processing tests specifically — like, they pass on rerun, which makes them hard to track down. Could be related to what Megan's describing, could be test environment flakiness, we're not sure yet.
+[AEGIS] Raj Kapoor: Okay, that's worth noting. Loop in the infrastructure team on those test failures — even if it's just for awareness.
+[AEGIS] Nina Kowalski: Already on it, I sent them the logs yesterday.
+[AEGIS] Raj Kapoor: Good. Alright, let's talk March priorities quickly. For product the focus is obviously Comply v2 — getting to code freeze by the third week of March so Nina's team has enough runway. Agreed, Megan?
+[AEGIS] Megan Lawson: Agreed. I do want to have a conversation about whether we shift any Identity roadmap items to Q3 to free up eng bandwidth — I don't want to have that debate on this call, but I flagged it.
+[AEGIS] Raj Kapoor: Let's schedule that for next week — just you and me and maybe Lena from eng leadership. Diana, from your side, March priorities?
+[AEGIS] Diana Reeves: Close Brentwood and TechCore, obviously. And I want to get a Comply v2 early access briefing set up for at least three or four of our strategic accounts before the April launch — let them know it's coming, manage expectations, get some pre-launch testimonials if we can.
+[AEGIS] Raj Kapoor: I like that. Megan, can you get Diana something she can use for those briefings — not a full deck, but talking points and maybe a draft feature summary?
+[AEGIS] Megan Lawson: Yeah, I can get that done by end of next week.
+[AEGIS] Raj Kapoor: Perfect. Okay, I think that covers the main stuff. Anyone have anything else before we wrap?
+[AEGIS] Nina Kowalski: Nothing from me.
+[AEGIS] Diana Reeves: I'm good. Thanks everyone.
+[AEGIS] Raj Kapoor: Alright, good call. Let's have a strong March — a lot riding on the next few weeks. Talk soon.

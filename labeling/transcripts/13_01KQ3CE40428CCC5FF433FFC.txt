@@ -1,0 +1,44 @@
+Detect Outage - Post-Incident Review
+2026-03-18
+
+[AEGIS] Tom Bradley: Alright, I think we're all here — let me just pull up my notes real quick.
+[AEGIS] Diana Reeves: Yeah I'm here, go ahead.
+[AEGIS] Megan Lawson: Same, I've got about twenty minutes before my next thing so let's try to be efficient.
+[AEGIS] Tom Bradley: Okay so — this is the post-incident review for the Detect outage, March 10th through the 18th, well, the outage itself was March 10th, we're just closing it out today.
+[AEGIS] Diana Reeves: Right, and just to frame this — I had a lot of customer conversations this week, so I want to make sure we're aligned on what we're telling them going forward.
+[AEGIS] Tom Bradley: Totally fair, we'll get there. So let me just walk through the timeline and root cause first, and then we can talk about the fix and the comms piece.
+[AEGIS] Megan Lawson: Sounds good.
+[AEGIS] Tom Bradley: So the incident started around 2:14 AM Pacific on March 10th. The event ingestion pipeline — this is the core processing layer that pulls in telemetry from customer environments — it had a cascading failure. Basically one node went down, and because we had a single point of failure in that ingestion layer, the whole pipeline backed up and eventually stopped processing.
+[AEGIS] Megan Lawson: And that's what caused the six-hour window with no visibility?
+[AEGIS] Tom Bradley: Correct. For approximately six hours, customers were not getting threat monitoring alerts. Events were being generated on their end, but we weren't processing them, so nothing was surfacing in the Detect dashboard.
+[AEGIS] Diana Reeves: Six hours is — I mean, that's a long time for a security product. Some of my customers were pretty upset, understandably.
+[AEGIS] Tom Bradley: I know, and I'm not going to sugarcoat it — this was a significant failure. The good news is we've done a full root cause analysis and the fix is already deployed.
+[AEGIS] Diana Reeves: Can you explain the fix at a level I can actually relay to customers? Like, not super deep in the weeds but enough that it's credible.
+[AEGIS] Tom Bradley: Yeah, so there are two main things. First, we've added redundant processing nodes to the event ingestion layer. So if one node fails, traffic automatically routes to backup nodes — no more single point of failure. Second, we've implemented what's called a circuit breaker pattern, which basically means if one part of the pipeline starts to degrade, it isolates that failure instead of letting it cascade through the whole system.
+[AEGIS] Diana Reeves: Okay, that's actually pretty explainable. Redundancy and failure isolation — I can work with that.
+[AEGIS] Megan Lawson: And just to add to that — from a product standpoint, we're also looking at adding a visible status indicator in the Detect UI so customers can see in real-time whether the pipeline is healthy. That's not shipped yet but it's on the near-term roadmap.
+[AEGIS] Diana Reeves: When's that realistically landing?
+[AEGIS] Megan Lawson: Uh, we're targeting end of April, but I don't want to over-promise. It depends on a few other things in the queue.
+[AEGIS] Diana Reeves: Can we at least tell customers it's in progress? Because right now they're asking 'how do I even know if Detect is working' and I don't have a great answer.
+[AEGIS] Megan Lawson: Yeah, absolutely tell them it's in progress. That's a real commitment, end of April is the target.
+[AEGIS] Tom Bradley: I do want to flag one thing — and this is a bit of a sore spot for me — our alerting on the pipeline health itself was inadequate. We didn't catch this until customers started reaching out. That's not acceptable.
+[AEGIS] Megan Lawson: Yeah, how did we find out? Was it a customer ticket?
+[AEGIS] Tom Bradley: It was — one of Diana's team's accounts, actually. Flagged that they hadn't seen any alerts in a few hours and opened a support ticket.
+[AEGIS] Diana Reeves: Yeah, that was Thornfield Financial. They've got a pretty attentive security team, fortunately.
+[AEGIS] Tom Bradley: So we are adding internal monitoring on the ingestion pipeline itself — not just the output but the pipeline health metrics. That's already in place as of this week.
+[AEGIS] Diana Reeves: Good. I think one of the things I keep hearing from customers is — they feel like they're flying blind sometimes with Detect. And this incident kind of reinforced that. I don't say that to be harsh, I just think it's worth naming.
+[AEGIS] Tom Bradley: No, I — yeah. I hear that. And honestly some of it is a product maturity issue, some of it is infrastructure. Megan, is there anything we can prioritize in the short term to help with that visibility gap beyond the status indicator?
+[AEGIS] Megan Lawson: We've been talking about a heartbeat alert feature — basically Detect would proactively notify customers if it stops receiving telemetry from their environment for more than, say, fifteen minutes. That would at least give them a signal on their end.
+[AEGIS] Diana Reeves: Oh, that would be huge actually. Can we pull that forward?
+[AEGIS] Megan Lawson: Let me take a look at the roadmap this week. I think there's room to move it up, but I need to see what it bumps. I'll come back to both of you by end of week.
+[AEGIS] Tom Bradley: Okay. And on the customer communication side — Diana, what's the current state? Did we send a post-incident report to affected accounts?
+[AEGIS] Diana Reeves: We sent an initial communication on March 10th when the incident was resolved, but we have not sent a formal PIR document yet. I've been waiting on the root cause writeup from engineering.
+[AEGIS] Tom Bradley: Yeah that's on me, I'll have that to you by tomorrow morning. Full technical summary, the fix, and what we're doing to prevent recurrence.
+[AEGIS] Diana Reeves: Okay, and then I'll adapt it into customer-facing language and get it out by end of week. Some of our enterprise accounts are going to want a call, not just an email — particularly the ones who are mid-renewal.
+[AEGIS] Megan Lawson: Do you want me or Tom on any of those calls, or are you handling them with your CSMs?
+[AEGIS] Diana Reeves: Probably Tom for anyone who wants a technical deep-dive. I'll flag the specific accounts and we can coordinate. I don't think it'll be more than three or four.
+[AEGIS] Tom Bradley: Yeah, I'm available for that. Just loop me in with at least a day's notice if you can.
+[AEGIS] Diana Reeves: Will do. Alright, I think I have what I need. Tom — PIR doc tomorrow, and Megan — roadmap check by end of week on the heartbeat feature?
+[AEGIS] Tom Bradley: Correct.
+[AEGIS] Megan Lawson: Yep, I've got it.
+[AEGIS] Diana Reeves: Okay, good. Thanks both — let's close this one out.

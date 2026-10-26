@@ -1,0 +1,46 @@
+Product Sync - Identity Roadmap
+2026-02-09
+
+[AEGIS] Ananya Sharma: Alright, I think everyone's on — Hannah, Nina, can you both hear me okay?
+[AEGIS] Hannah Liu: Yep, loud and clear.
+[AEGIS] Nina Kowalski: Same here, I'm good.
+[AEGIS] Ananya Sharma: Okay great. So, um, I think the main thing we wanted to get through today is the Identity roadmap for Q2, specifically around the MFA expansion and then the SSO connector work. Hannah, do you want to kind of set the stage?
+[AEGIS] Hannah Liu: Yeah, for sure. So, at a high level, the ask from leadership is that we have a clearer story around Aegis Identity by end of Q2. Right now the feedback we're getting from sales is that the IAM side feels a little thin compared to what SentinelShield is putting out there. So the focus areas are — one, the MFA policy engine, and two, the SSO connector library, we want to expand that significantly.
+[AEGIS] Ananya Sharma: Right, and I think the SSO connector piece is actually the more tractable one in the near term. We already have the SAML 2.0 foundation in place, so adding connectors for, say, Okta, Azure AD, that's — it's work but it's not like, greenfield work.
+[AEGIS] Nina Kowalski: How many connectors are we talking about? Because from a QA standpoint, each one is basically its own test surface.
+[AEGIS] Hannah Liu: Yeah, that's a fair point. I think we were penciling in something like six to eight new connectors by end of Q2. But I want to hear what's realistic from Ananya's side before we commit to that number publicly.
+[AEGIS] Ananya Sharma: Six to eight is... doable, but it depends a lot on how we scope the testing cycles. Like if Nina's team needs, what, two weeks per connector for full regression?
+[AEGIS] Nina Kowalski: It's not quite that bad. For a connector where the underlying SAML flow is already validated, we can probably get that down to, I'd say, a week of focused testing if we have good test environments set up. The problem is historically we've had to wait on engineering to provision those environments and that's where time gets lost.
+[AEGIS] Ananya Sharma: Okay yeah, that's a real bottleneck. I actually put a ticket in — I want to say like two sprints ago — to get a dedicated staging tenant for Identity testing and it's still sitting in the infrastructure queue.
+[AEGIS] Hannah Liu: I didn't know that was still open. Do you know who's blocking it?
+[AEGIS] Ananya Sharma: It's not really blocked, it just hasn't been prioritized. I think the infra team has been heads down on the Detect pipeline work so everything else kind of got deprioritized.
+[AEGIS] Hannah Liu: Okay, I can follow up with the infra lead on that. That actually needs to happen regardless of what we decide today, so let me just take that as an action item.
+[AEGIS] Nina Kowalski: That would be great, yeah.
+[AEGIS] Hannah Liu: So, going back to MFA — Ananya, what's the current state of the policy engine? I know we had some design discussions back in December but I feel like things shifted after the holidays.
+[AEGIS] Ananya Sharma: Yeah, so the design did shift a bit. The original plan was to build a rules-based engine where admins could define MFA requirements per user group and per application. That's still the core of it. What changed is we're now also looking at adding a risk-signal layer, so the system can factor in things like login location, device fingerprint, time of day — and then either require step-up auth or flag it for review.
+[AEGIS] Hannah Liu: Okay, that's — I mean, that's a bigger scope than what I had in my head. Is that all in scope for Q2 or is the risk-signal piece more of a later phase?
+[AEGIS] Ananya Sharma: Honestly I think we should phase it. The core rules engine, that's Q2. The risk-signal layer I'd push to Q3 at the earliest. It requires integrating with some telemetry pipelines that aren't fully built out yet.
+[AEGIS] Nina Kowalski: That makes sense to me. From a QA perspective, testing adaptive MFA is significantly more complex — you basically need to simulate all these different environmental conditions. So keeping that separate is probably the right call.
+[AEGIS] Hannah Liu: Agreed. And honestly from a product narrative standpoint, we can still tell a strong story with the rules-based engine. Being able to say you can set granular MFA policies per role, per app, that's already differentiated from what CyberNova offers right now.
+[AEGIS] Ananya Sharma: Yeah I think that's right. CyberNova's IAM is pretty much all-or-nothing on MFA from what I've seen.
+[AEGIS] Hannah Liu: Okay so let's try to nail down some rough timelines. If we're targeting the rules engine for Q2, what does that look like sprint by sprint? I know it's early but even a rough shape would help me with planning.
+[AEGIS] Ananya Sharma: So, rough shape — I'd say February and into early March is design finalization and we start building out the policy schema, the data model. Mid-March through April is core implementation. And then ideally late April we're handing off to Nina's team for testing, which gives us... a May release window if everything goes smoothly.
+[AEGIS] Nina Kowalski: May is tight but not impossible. The thing I'd flag is that late April hand-off only works if the spec is really locked before we start testing. Last time, and I don't want to relitigate this, but last time we got a build that was still in flux and we wasted like a week and a half.
+[AEGIS] Ananya Sharma: No that's a totally fair callout, and I take ownership of that — the spec on the last feature wasn't clean enough when it went to QA. What I'd suggest is we set a hard cutoff, like spec is locked two weeks before the hand-off date, and if it's not locked, we don't hand off.
+[AEGIS] Hannah Liu: I'm supportive of that. And from my side, I'll make sure the acceptance criteria are written into the spec from the beginning so Nina's team isn't guessing at what done looks like.
+[AEGIS] Nina Kowalski: That would genuinely help a lot. If we have acceptance criteria upfront, we can start building test cases in parallel with development instead of waiting.
+[AEGIS] Hannah Liu: Good, let's make that the standard going forward for Identity work. Okay, so — SSO connectors. Do we want to talk about prioritization? Like which connectors do we tackle first?
+[AEGIS] Hannah Liu: Yeah, so I've been looking at this. Based on what sales has been logging in the CRM, Okta is by far the most requested. After that it's Azure AD, then Google Workspace. Everything else is pretty scattered — Ping Identity comes up occasionally, Duo, a few others.
+[AEGIS] Ananya Sharma: Okay so Okta, Azure AD, Google Workspace as the first three. That actually makes sense from an engineering standpoint too because those three have the most mature and well-documented APIs, so we're less likely to hit weird edge cases.
+[AEGIS] Nina Kowalski: From a testing standpoint I'll need access to sandbox environments for all three. Okta I'm pretty sure we have a dev account already. Azure AD and Google Workspace I'd need to confirm.
+[AEGIS] Ananya Sharma: We definitely have the Okta dev account. Azure AD — I think we have one through our internal Nextera agreement but I'd have to check with IT. Google Workspace I'm not sure about.
+[AEGIS] Hannah Liu: Can you both just check and send me what you find? I'd rather know now if there's a gap so we can sort it out before it becomes a blocker in March.
+[AEGIS] Ananya Sharma: Yeah I'll check on the Azure one this week.
+[AEGIS] Nina Kowalski: Same, I'll figure out the Okta account situation and confirm it's still active.
+[AEGIS] Hannah Liu: Great. Okay I think we're in decent shape on the high-level plan. Let me just recap what I've got — MFA policy rules engine is the Q2 priority, spec locked mid-April, hand-off to QA late April, targeting May GA. SSO connectors, starting with Okta, Azure AD, Google Workspace. And I'm following up on the infra staging environment ticket. Does that sound right to everyone?
+[AEGIS] Ananya Sharma: That covers it from my side. The one thing I'd add is we should probably schedule a mid-point check-in, like sometime in March, just to make sure we're on track before things get too far along.
+[AEGIS] Hannah Liu: Agreed. I'll put something on the calendar for mid-March — same group, probably thirty minutes.
+[AEGIS] Nina Kowalski: Works for me.
+[AEGIS] Hannah Liu: Alright, I think that's everything. Thanks both, this was a useful sync.
+[AEGIS] Ananya Sharma: Yeah, good to get on the same page. Talk soon.
+[AEGIS] Nina Kowalski: Thanks everyone, bye.

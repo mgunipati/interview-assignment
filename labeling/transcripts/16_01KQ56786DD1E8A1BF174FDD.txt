@@ -1,0 +1,46 @@
+Support Case #1993 - Forge Industries Comply v2 Early Access Question
+2026-04-03
+
+[AEGIS] David Kim: Alright, I think we've got everyone on now — Customer 1, Customer 2, can you hear us okay?
+[CUSTOMER] Customer 1: Yep, loud and clear, David.
+[CUSTOMER] Customer 2: Same here, good connection today.
+[AEGIS] David Kim: Great, and I also wanted to introduce Elena Vasquez, she's a senior support engineer here, she's been really deep in the Comply module so I pulled her in for this one.
+[AEGIS] Elena Vasquez: Hi everyone, really happy to be on this call — Forge Industries is actually one of the accounts I've been keeping an eye on, so this is a great chance to connect directly.
+[CUSTOMER] Customer 1: Oh great, well we appreciate that, Elena. So yeah, I'm Customer 1, VP of IT here at Forge, and Customer 2 is our Security Manager, she's really the one in the weeds on this.
+[CUSTOMER] Customer 2: Yeah, hi — and honestly thank you guys for making time on short notice, I know we submitted the case just yesterday.
+[AEGIS] David Kim: Of course, that's what we're here for. So let me just pull up case [ID] real quick — okay, so it looks like the question is around Comply v2 and specifically early access. Customer 2, do you want to just walk us through what you're looking to do?
+[CUSTOMER] Customer 2: Sure, yeah. So, um, we've been on Aegis Comply for about eight months now and it's been really solid for us. But our compliance team — we report across multiple frameworks, we do SOC 2, we're getting into HIPAA because we've got a new healthcare adjacent part of the business, and then we have PCI requirements for some of our vendor payment processing. And right now, pulling reports for each of those is just... it's a lot of manual work.
+[AEGIS] Elena Vasquez: Right, yeah, that totally makes sense, especially juggling three frameworks at once.
+[CUSTOMER] Customer 2: Exactly. So we heard through, uh, I think it was a webinar or something, that there's a version two of Comply coming that has on-demand reporting across multiple frameworks. And we just — we really want to know if there's any way to get early access before the general release because our SOC 2 audit window is coming up and the timing would be really helpful.
+[AEGIS] Elena Vasquez: Yeah that's — and honestly I want to say, your timing on asking about this is really good.
+[CUSTOMER] Customer 1: Oh yeah?
+[AEGIS] Elena Vasquez: Yeah so, um, I can share — and David correct me if I'm misstating anything here — but Comply v2 is essentially locked and going through final QA right now. The GA launch is actually scheduled for April 7th, so that's like, what, four days from now.
+[AEGIS] David Kim: That's right, April 7th is the date we have, it's been on the roadmap for a little while and the team is feeling really good about it.
+[CUSTOMER] Customer 1: Oh wow, okay, four days — Customer 2 did you catch that?
+[CUSTOMER] Customer 2: Yeah I — that's honestly better than I expected. So it's a full GA release, not just like a limited beta?
+[AEGIS] Elena Vasquez: Full GA, available to all existing Comply customers. And the on-demand reporting piece — that's going to cover SOC 2, PCI DSS, HIPAA, and ISO 27001 right out of the gate. So your use case, Customer 2, honestly checks every box.
+[CUSTOMER] Customer 2: That's — okay, that's really exciting actually. Because we were almost starting to look at whether we needed a separate point solution just for the HIPAA piece and this would obviously be way cleaner to keep it all in one platform.
+[AEGIS] Elena Vasquez: Yeah absolutely, and that's kind of the whole vision behind v2 — consolidating that audit prep workflow so you're not bouncing between tools or doing a ton of manual exports. You essentially set up your framework mappings and then you can generate a report on demand whenever your auditor asks for it.
+[CUSTOMER] Customer 1: Can I ask a kind of dumb question — when you say on-demand, does that mean like, real-time? Or is there still some processing lag?
+[AEGIS] Elena Vasquez: That's not a dumb question at all, it's actually a really common one. So the underlying data is continuously synced, so when you generate a report it's pulling from current state. There may be, you know, a minute or two of rendering time depending on the scope of what you're pulling, but it's not like a 24-hour batch job or anything like that.
+[CUSTOMER] Customer 1: Okay great, that's what I was hoping to hear.
+[AEGIS] David Kim: And just to add to that — one of the things that came with v2 is also better evidence collection. So it's not just generating the summary report, it's actually attaching the relevant log references and control evidence inline, which is something auditors have been asking for.
+[CUSTOMER] Customer 2: Oh that is huge. Our last SOC 2 audit, we spent — I don't even want to say how many hours just pulling evidence artifacts together manually.
+[AEGIS] Elena Vasquez: Yeah that's one of the biggest pain points we hear from compliance teams honestly.
+[CUSTOMER] Customer 2: So okay, back to the original question — since we're only four days out, is there anything we should be doing to prepare, or does the upgrade happen automatically for our tenant?
+[AEGIS] Elena Vasquez: Good question. So the v2 update will roll out automatically for existing customers, but there are a few configuration steps you'll want to do on your side to take full advantage of the multi-framework features. Specifically you'll need to go into the Comply settings and, um, map your existing controls to the new framework templates — v2 has a migration assistant for this that'll try to auto-map based on your current setup, but you'll want to review it.
+[CUSTOMER] Customer 2: Is there documentation for that process, or like a walkthrough?
+[AEGIS] Elena Vasquez: Yes, there's going to be a full v2 migration guide published in the knowledge base on the 7th alongside the release, and we're also planning a customer webinar — David, what's the date on that?
+[AEGIS] David Kim: I believe it's April 10th, a Thursday, I can send you both the invite after this call if that's helpful.
+[CUSTOMER] Customer 2: Please do, yeah. And actually can you send it to a couple people on my team? I've got two compliance analysts who are going to be the primary users on this.
+[AEGIS] David Kim: Absolutely, just shoot me an email with their addresses and I'll get them added.
+[CUSTOMER] Customer 2: Perfect. Okay and — sorry, one more thing, this might be a little out of scope for this call but — we had been thinking about requesting some features around, um, custom control labeling within the reports. Like being able to tag controls with our internal policy numbers. Is that something v2 supports or is that more of a future roadmap item?
+[AEGIS] Elena Vasquez: Ooh, that's a good one. So, um, v2 does have a custom metadata field option for controls — I don't want to overcommit on exactly how flexible it is but I believe you can add custom tags and labels. I'd want to double-check the specifics and follow up with you in writing so you know exactly what's supported.
+[CUSTOMER] Customer 2: Yeah that would be great, even if it's partial support that would be a huge improvement for us.
+[AEGIS] Elena Vasquez: And if it turns out there are gaps there, I'd love to formally log that as a feature request with the product team — that kind of internal policy cross-referencing is actually something I could see a lot of enterprise customers wanting.
+[CUSTOMER] Customer 1: Please do, yeah. We'd love to be part of that conversation if there's ever a beta or feedback group for that.
+[AEGIS] Elena Vasquez: Noted, and honestly Forge Industries would be a great reference customer for that kind of feature given how many frameworks you're operating across. I'll make a note of that.
+[CUSTOMER] Customer 1: Awesome. Okay I think that actually covers everything we came into this call with, and then some. David, Elena — this was super helpful, we really appreciate you both.
+[AEGIS] David Kim: Of course, glad we could help. I'll send over the webinar invite and follow up on the custom labeling question by end of week. Don't hesitate to reach back out through the case if anything else comes up before the 7th.
+[CUSTOMER] Customer 2: Will do. Thanks everyone, talk soon.
+[AEGIS] Elena Vasquez: Thanks, have a good one!

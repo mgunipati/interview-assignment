@@ -1,0 +1,14 @@
+name,requests,accounts,at_risk_accounts,internal_mentions,example
+Formal Post-Incident RCA Reports,11,8,7,2,Customer-shareable technical summary of the incident and remediation
+Proactive Outage Notifications,11,7,7,2,Proactive outage notifications to affected customers
+Comply On-Demand Multi-Framework Reporting,57,21,6,11,"Multi-framework compliance reporting covering ISO 27001, HIPAA, SOC 2 and PCI DSS (previously requested, now shipped)"
+Detect Ingestion Pipeline Resilience,15,7,6,6,Redundant processing nodes and circuit breaker for the event ingestion pipeline
+Enforceable Uptime SLA Commitments,8,6,6,2,Stronger SLA commitment for at-risk deals
+Detect Outage Remediation Documentation,8,6,4,2,Technical remediation documentation for the outage and an engineering call to review architecture changes
+Alert Noise and Tuning,9,5,4,3,Behavioral baselining that learns normal activity for the specific environment to reduce false positives
+Identity Access Policies & Provisioning,28,7,3,9,Native SSO within Comply (deferred to v2.1)
+Proactive Known-Issue Notifications,5,4,2,1,Proactive notifications to customers running agent versions affected by known issues
+Detection Rule and Policy Customization,7,4,1,2,Bulk update template for flagging high-mobility users
+Higher API and Usage Limits,5,3,1,2,Higher daily on-demand report generation API limits (e.g. 100 per day) for enterprise customers
+Backup and Restore Enhancements,14,4,0,5,Granular file-level restore from EBS snapshots with path/directory selection
+Detect Pipeline Health Visibility,9,2,0,7,Independent internal health monitoring and alerting not tied to the ingestion pipeline

@@ -1,0 +1,45 @@
+Support Case #3677 - Coastal Living Co MFA Token Failures
+2026-02-24
+
+[AEGIS] Elena Vasquez: Hi, this is Elena Vasquez from Aegis Cloud Security support, am I speaking with Customer 1?
+[CUSTOMER] Customer 1: Yes, hi Elena, Customer 1 here, VP of Engineering at Coastal Living Co — thanks for picking this up, I've been waiting on a callback for a bit.
+[AEGIS] Elena Vasquez: Yeah, I apologize for the delay on that, Customer 1, we've had a higher than normal queue today — but I've got your case pulled up here, case number [ID], MFA token failures, is that right?
+[CUSTOMER] Customer 1: That's correct, yes, and honestly it's been — it's been a pretty rough morning because of this, so I'm really hoping we can get to the bottom of it today.
+[AEGIS] Elena Vasquez: Absolutely, let's dig in — can you walk me through what you're seeing, like when did this start and which users are affected?
+[CUSTOMER] Customer 1: So it started, um, I'd say around 7 AM this morning, and it's not all users — it seems to be specifically the users who are enrolled in TOTP-based MFA through Aegis Identity, they're getting token validation failures even though the tokens are generating correctly on their authenticator apps.
+[AEGIS] Elena Vasquez: Okay, TOTP failures, and are these users on a specific SSO integration or are they authenticating directly through the Aegis Identity portal?
+[CUSTOMER] Customer 1: They're going through our Okta SSO integration that we have set up with Aegis Identity, so the flow is Okta, then it hands off to Aegis Identity for the MFA step.
+[AEGIS] Elena Vasquez: Got it, and roughly how many users are hitting this — is it like a handful or is it widespread across your org?
+[CUSTOMER] Customer 1: It's — I mean it's significant, we're talking probably 40, maybe 45 users who can't get in right now, and these are people on our engineering and ops teams who need access to production systems, so this is not a minor inconvenience, Elena.
+[AEGIS] Elena Vasquez: No, I completely understand, that's a critical situation and I'm treating it as such — let me check a few things on the backend here while we talk.
+[CUSTOMER] Customer 1: Yeah please do, and I also want to flag that we had users try regenerating their TOTP secrets through the self-service portal and re-enrolling their authenticator apps and it didn't fix anything, same error.
+[AEGIS] Elena Vasquez: Hmm, okay, that's actually a really useful data point — if re-enrollment isn't resolving it that does suggest this might not be a user-side clock drift issue, which was my first instinct.
+[CUSTOMER] Customer 1: Right, and I mean we checked device times, everything looks synced, I had two of my engineers verify that specifically because I knew that would be the first question.
+[AEGIS] Elena Vasquez: Smart, okay — I'm pulling up your tenant now and I'm looking at the authentication logs... give me just one second here...
+[CUSTOMER] Customer 1: Sure, and while you're doing that I just want to say — we evaluated Aegis Identity specifically because of the reliability promises, we're a retail company, we have tight operational windows, we can't have engineering staff locked out of systems, especially heading into our spring inventory cycle.
+[AEGIS] Elena Vasquez: That's completely fair and I hear you on that, the timing is terrible — okay, I'm seeing something in your logs, there are a high volume of TOTP validation attempts all returning a 4031 error code, which is... okay, that's interesting.
+[CUSTOMER] Customer 1: What does 4031 mean, is that something on your end?
+[AEGIS] Elena Vasquez: So a 4031 is a token validation window mismatch, but — and this is the part that's odd — it's usually caused by a time sync issue on either the client or our validation server, but given that you've already ruled out client-side, I want to check if there's something going on with our validation service configuration for your tenant specifically.
+[CUSTOMER] Customer 1: So you're saying this could be a bug on Aegis's side?
+[AEGIS] Elena Vasquez: I — I don't want to confirm that definitively yet without escalating to our Identity engineering team, but based on what I'm seeing in these logs and the fact that re-enrollment didn't help, it does look like the issue may be on our end, yes.
+[CUSTOMER] Customer 1: Elena, that's — okay, I appreciate you being honest about that but that is really frustrating to hear, because this is a production impacting issue and my team has been blocked for hours.
+[AEGIS] Elena Vasquez: I know, and I'm not going to sugarcoat it, this is a problem and we need to fix it — what I can do right now is flag this as a P1 escalation to our Identity engineering team, and I also want to offer a temporary workaround while we investigate.
+[CUSTOMER] Customer 1: What kind of workaround are we talking about?
+[AEGIS] Elena Vasquez: So within Aegis Identity, admins have the ability to temporarily switch affected users to email-based OTP as a fallback method — it's not ideal, I know, but it would unblock your team immediately while the TOTP validation issue is being investigated.
+[CUSTOMER] Customer 1: Email OTP... I mean that's less secure and my security team is going to push back on that, but I understand you're trying to help — how long would this workaround need to be in place?
+[AEGIS] Elena Vasquez: I honestly can't give you a hard timeline without the engineering team weighing in, but P1 escalations for Identity are supposed to have an initial response within two hours and a resolution path within four — I will personally stay on this case and keep you updated.
+[CUSTOMER] Customer 1: Two to four hours — Elena, my team has already been down for several hours, that's potentially most of the workday for some of these folks.
+[AEGIS] Elena Vasquez: I know, and I'm sorry — I'm escalating this right now as we speak, I'm marking it as business critical with active user lockout, that should push it to the front of the engineering queue.
+[CUSTOMER] Customer 1: Okay, fine — and can you also tell me, is this affecting other customers or is it just us?
+[AEGIS] Elena Vasquez: I'm going to be transparent with you — I don't have visibility into other tenant logs, but I'm not seeing any broader incident reported for Aegis Identity on our internal status board, so right now it looks like it may be specific to your tenant configuration, possibly related to the Okta integration setup.
+[CUSTOMER] Customer 1: So something in our configuration, but we haven't changed anything on our end — nothing was touched, no updates, no config changes since last week.
+[AEGIS] Elena Vasquez: I hear you, and I believe you — there may have been a backend update or configuration push on our side that affected certain tenant setups, that's something the engineering team will need to confirm.
+[CUSTOMER] Customer 1: Alright, okay — so what do I need to do right now, walk me through the email OTP workaround steps so I can at least get my team unblocked.
+[AEGIS] Elena Vasquez: Sure, so if you go into the Aegis Identity admin console, navigate to Authentication Policies, and then under the MFA methods for your primary user group, you should see an option to enable email OTP as an allowed fallback — I can stay on the line while you do that.
+[CUSTOMER] Customer 1: Okay, I'm in the admin console now... Authentication Policies... yeah I see it, I see the MFA methods section.
+[AEGIS] Elena Vasquez: Great, and you should see a toggle or checkbox for email OTP — enabling it there should allow affected users to choose it as an alternative at the next login attempt.
+[CUSTOMER] Customer 1: Okay... I'm enabling it now, and I'll have someone ping the affected users to try logging in again — but Elena, I need a follow-up from you today, not tomorrow, today, with an actual update on what caused this.
+[AEGIS] Elena Vasquez: Absolutely, you have my word — I'll follow up via email with an update by end of business today, and if engineering identifies the root cause before then you'll hear from me immediately.
+[CUSTOMER] Customer 1: Alright, I'm going to hold you to that — and honestly we're going to need to have a broader conversation about reliability with our account team because this is not the first time we've had hiccups, but that's a separate discussion.
+[AEGIS] Elena Vasquez: Understood, and that's a fair conversation to have — I'll make a note for your account team to follow up on that as well, for now let's get your team back in and I'll be in touch shortly, okay?
+[CUSTOMER] Customer 1: Okay, thanks Elena — I hope to hear from you soon.

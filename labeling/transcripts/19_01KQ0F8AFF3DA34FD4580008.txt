@@ -1,0 +1,45 @@
+Aegis / Cobalt Software - Q2 Planning
+2026-04-11
+
+[AEGIS] Lisa Park: Hey Customer 1, thanks for making time this morning — I know Q2 planning season gets pretty hectic.
+[CUSTOMER] Customer 1: Yeah, no kidding, it's been a lot. But this was already on my calendar so I made sure to protect it.
+[AEGIS] Lisa Park: I appreciate that. So, just to set the agenda for today — I wanted to walk through where things stand on the renewal, get your feedback on how the platform's been performing, and then we can talk about what your roadmap looks like for the rest of the year.
+[CUSTOMER] Customer 1: That works. And I do have some things I want to flag, so... yeah, let's just get into it.
+[AEGIS] Lisa Park: Of course. Why don't you go first actually — what's on your mind?
+[CUSTOMER] Customer 1: Okay, so the big thing — and I want to be direct here — is the outage in March. The Detect outage. That was... that was not a great experience for us.
+[AEGIS] Lisa Park: Yeah, and I completely understand. I was going to bring that up myself. That was March 10th through roughly the 18th, the event processing issue — six hours of no visibility on threat monitoring.
+[CUSTOMER] Customer 1: Right. And look, I get that outages happen, I've been in infrastructure long enough to know nothing is bulletproof, but six hours is a long time. Our security team was basically flying blind.
+[AEGIS] Lisa Park: Completely fair. And I don't want to just gloss over it with a, you know, 'here's what we did to fix it' kind of answer if you have more to say about the impact on your side.
+[CUSTOMER] Customer 1: I mean, we didn't have an incident during that window, which is lucky, but it surfaced a gap in our own contingency planning too, so it wasn't all on Aegis. It just... it raised questions internally about the reliability of the platform.
+[AEGIS] Lisa Park: That's really helpful context, and I appreciate you being candid about it. On our end, the root cause was a single point of failure in the event ingestion pipeline — it was a cascading failure from there. Engineering has since deployed redundant processing nodes and implemented a circuit breaker pattern, so the architecture is fundamentally different now in that layer.
+[CUSTOMER] Customer 1: Okay. Is there documentation on that? Like, something I can actually share with my team rather than just taking your word for it?
+[AEGIS] Lisa Park: Yes, absolutely. We put out a full post-incident review — I'll send that over after the call. It goes into the root cause analysis, the remediation steps, and the testing we did before re-deploying.
+[CUSTOMER] Customer 1: Good. That'll help. My team wants to see that it's not just a band-aid.
+[AEGIS] Lisa Park: Understood. And honestly if there are follow-up questions after your team reviews it, I can also set up time with one of our solution architects to walk through the technical details.
+[CUSTOMER] Customer 1: That might be worth doing, yeah. Let me see what the team thinks after they read the doc. Okay, so that's the main concern. What else — you said you wanted to cover the renewal specifically?
+[AEGIS] Lisa Park: Right. So your current contract runs through end of June, so we're about... eleven weeks out. I wanted to start the conversation early so we're not scrambling in June.
+[CUSTOMER] Customer 1: Smart. Yeah. What are you looking at — is pricing changing?
+[AEGIS] Lisa Park: So, there is a standard escalator built into the contract — I believe it's three percent — and that would apply. But I also want to understand what your scope looks like going into next year before we lock anything in, because if you're expanding, that changes the conversation.
+[CUSTOMER] Customer 1: Mm. Yeah, so we're planning to add about forty more cloud workloads through Q3 as we finish migrating the last of our on-prem stuff. So the footprint is growing.
+[AEGIS] Lisa Park: Okay, that's good to know. Are those workloads going to be on CloudPrime primarily, or is it a mix?
+[CUSTOMER] Customer 1: Mix. Mostly CloudPrime, some Azure — we've got about a 70/30 split right now and I think it stays roughly there.
+[AEGIS] Lisa Park: Got it. That's helpful. So I'll put together some options — probably a base renewal at your current tier, and then a growth option that prices in that expanded workload count. I can model out what makes sense financially for both sides.
+[CUSTOMER] Customer 1: That'd be useful. And, um, I do want to flag — we're not exclusively evaluating Aegis. I have procurement pushing me to get at least one competitive quote, so... I want to be transparent about that.
+[AEGIS] Lisa Park: I appreciate you being upfront. Who are you looking at, if you don't mind me asking?
+[CUSTOMER] Customer 1: Probably SentinelShield, just because they've been pretty aggressive in our space lately. I don't have a strong pull toward them but procurement wants the comparison.
+[AEGIS] Lisa Park: Fair enough. I'll make sure our proposal is competitive on value, not just price. And I'm happy to do a side-by-side if that would be helpful for your internal review.
+[CUSTOMER] Customer 1: Maybe. Let me see what SentinelShield comes back with first.
+[AEGIS] Lisa Park: Of course. Just know the offer is there. Okay, I also wanted to touch on Comply v2 — you're currently on Comply, right? The new version just went GA on April 7th.
+[CUSTOMER] Customer 1: Oh yeah, I saw the release notes. The on-demand reporting — we've actually already poked around in it a little.
+[AEGIS] Lisa Park: Oh great, any early impressions?
+[CUSTOMER] Customer 1: It's... decent. The SOC 2 report generation is noticeably faster than v1. We haven't dug into the HIPAA or ISO stuff yet because that's not really our priority, but the multi-framework view is something we'll probably use for PCI.
+[AEGIS] Lisa Park: That's good to hear on the SOC 2 side — that's been one of the most common things customers come to us about. And yeah, PCI DSS coverage in v2 is pretty robust, so I'd encourage you to test that whenever you get a chance.
+[CUSTOMER] Customer 1: We will. Our next PCI audit cycle is Q4 so I want to have that dialed in before then.
+[AEGIS] Lisa Park: Perfect timing then. I can connect you with our compliance specialist if you want a guided walkthrough before you're in the thick of audit prep.
+[CUSTOMER] Customer 1: Yeah, actually, that would be useful. Maybe in June or so.
+[AEGIS] Lisa Park: I'll make a note of that. Okay, so to recap what I'm taking away — I'll send the post-incident review for the Detect outage, I'll put together two renewal proposal options with pricing that reflects the expanded workload, and I'll pencil in a compliance walkthrough for sometime in June. Does that cover everything?
+[CUSTOMER] Customer 1: I think so. And if we decide to loop in the solutions architect on the Detect stuff, I'll reach out through you.
+[AEGIS] Lisa Park: Absolutely, just ping me and I'll coordinate. What's a good turnaround for the proposal — does two weeks work, so around the 24th?
+[CUSTOMER] Customer 1: Yeah, that's fine. I probably won't get to it until the following week anyway, so that timing works.
+[AEGIS] Lisa Park: Perfect. Alright, I'll let you get back to your Q2 planning chaos. Thanks again for the time, Customer 1.
+[CUSTOMER] Customer 1: Thanks Lisa. Talk soon.
